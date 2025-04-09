@@ -1,0 +1,151 @@
+/* Container holding the whole card */
+.pan-container {
+  width: 35vw;
+  height: 45vh;
+  margin: auto;
+  perspective: 1000px;
+  /* Enables 3D flip */
+  border-radius: 5vh;
+  cursor: pointer;
+}
+
+.pan-container2 {
+  margin-left: 3vh;
+  margin-top: 3vh;
+  font-weight: bold;
+  font-size: 11.77px;
+  display: flex;
+  gap: 16vh;
+}
+
+.pan-Hologram {
+  /* border: 1px solid black; */
+  width: 5vw;
+  height: 10vh;
+  margin-top: 3vh;
+  border-radius: 1vh;
+  background-image: url('./images/pan-Hologram.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+/* Inner wrapper that will be rotated */
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+/* When flipped class is applied, rotate 180deg */
+.flip-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Front and back of the card */
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 5vh;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ✅ Front face with background image */
+.pan-container .front {
+  background-image: url('./images/pan-card-Front.png');
+}
+
+/* ✅ Back face with background image */
+.pan-container .back {
+  transform: rotateY(180deg);
+  background-image: url('./images/pan-card-back.jpg');
+}
+
+/* Optional: Header alignment */
+.pancard .header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pan-container .front .pan-header {
+  display: flex;
+  margin-top: 2vh;
+  margin-left: 2vh;
+  gap: 18vh;
+}
+
+.incomeDepartment,
+.govtOfIndia {
+  text-shadow: 2px 2px 5px pink;
+  font-size: 10px;
+  letter-spacing: -1px;
+  word-spacing: -4px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.pan-container .front .pan-photo {
+  /* border: 1px solid black; */
+  width: 5vw;
+  height: 10vh;
+  margin-left: 2vh;
+  letter-spacing: -1px;
+  word-spacing: -4px;
+  font-weight: bolder;
+  line-height: 15px;
+  font-size: 13px;
+  text-shadow: 1px 1px 5px pink;
+}
+
+.pan-container .front .pan-photo img {
+  width: 5vw;
+  height: 10vh;
+}
+
+.pan-container .front .pan-midBody {
+  /* border: 1px solid black; */
+  display: flex;
+  gap: 5.5vh;
+  margin-top: 1vh;
+  text-shadow: 1px 1px 5px pink;
+}
+
+/* PAN number in the center */
+.pan-number {
+  margin-top: 4vh;
+  font-weight: bold;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  margin-left: 3vh;
+}
+
+.pan-number h5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 19vh;
+  font-size: 14px;
+}
+
+.qr {
+  width: 10vw;
+  height: 19vh;
+}
+
+.qr img {
+  width: 120%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pan-container2 pre {
+  font-family: 'Times New Roman', Times, serif;
+}
